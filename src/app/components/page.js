@@ -179,7 +179,7 @@ function Button() {
   );
 }
 
-// Helper component for icons
+
 function IconBlock({ icon, label }) {
   return (
     <div style={{ textAlign: "center" }}>
