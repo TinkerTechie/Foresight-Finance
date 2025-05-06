@@ -21,16 +21,40 @@
     box-shadow: 0 0 12px rgba(255 ,107 ,107 ,0.6);
     transition: all 0.3s ease-in-out;
 }
-
+.log1{
+    opacity: none;
+}
+.buttn:hover .log1{
+    opacity: 1;
+}
 .logcont{
     margin-top: 2rem;
-  background-color: #ffffff11;
-  padding: 2rem;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 300px;
+    background-color: #ffffff11;
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    width: 300px;
 
+}
+.inp1{
+    padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  background: #fff;
+}
+.lgbtn{
+    color: #fff;
+}
+.btnlog{
+    padding: 0.75rem;
+  background-color: #FF6B6B;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
 }
