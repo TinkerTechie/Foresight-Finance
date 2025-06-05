@@ -1,37 +1,35 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import Link from "next/link";
 import "./style1.css";
 
 export default function Login() {
+  const [showLogin, setShowLogin] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [email, setEmail] = useState("");
-  const [showLogin, setShowLogin] = useState(false);
-
-  useEffect(() => {
-    const storedEmail = localStorage.getItem("userEmail");
-    if (storedEmail) {
-      setIsLoggedIn(true);
-      setEmail(storedEmail);
-    }
-  }, []);
 
   const handleLogin = (e) => {
     e.preventDefault();
     const emailInput = e.target.email.value;
-    setIsLoggedIn(true);
     setEmail(emailInput);
-    localStorage.setItem("userEmail", emailInput);
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setEmail("");
+    setShowLogin(false);
   };
 
   return (
     <div className="btn">
-      {!isLoggedIn && !showLogin && (
+      {!showLogin && !isLoggedIn && (
         <button className="buttn" onClick={() => setShowLogin(true)}>
           Login First!
         </button>
       )}
 
-      {!isLoggedIn && showLogin && (
+      {showLogin && !isLoggedIn && (
         <div className="log1">
           <form className="logcont" onSubmit={handleLogin}>
             <h3 className="lgbtn">Login to Your Account</h3>
@@ -57,19 +55,16 @@ export default function Login() {
       )}
 
       {isLoggedIn && (
-        <div className="log1">
-          <h2 style={{ color: "#fff" }}>Welcome, {email} 🎉</h2>
-          <button
-            className="btnlog"
-            onClick={() => {
-              localStorage.removeItem("userEmail");
-              setIsLoggedIn(false);
-              setEmail("");
-              setShowLogin(false);
-            }}
-          >
+        <div className="after-login">
+          <h2 style={{ color: "#fff", marginTop: "2rem" }}>
+            Welcome, {email} 🎉
+          </h2>
+          <button className="btnlog1" onClick={handleLogout}>
             Logout
           </button>
+          <Link href="/userinfo">
+            <button className="btnlog1">Go to Finance Info</button>
+          </Link>
         </div>
       )}
     </div>

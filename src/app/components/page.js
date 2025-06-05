@@ -1,21 +1,12 @@
 'use client';
-import React from "react";
+
 import Link from "next/link";
 import { Wallet, PiggyBank, BarChart3, CreditCard, Banknote } from "lucide-react";
+import "./stylee.css"
+
 export default function HomePage() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        backgroundColor: "#0F172A",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "2rem",
-        position: "relative",
-        fontFamily: "Inter, sans-serif",
-      }}
+    <div className="main"
     >
       <div
         style={{
@@ -86,17 +77,7 @@ export default function HomePage() {
         </svg>
       </div>
 
-      <div
-        style={{
-          backgroundColor: "rgba(255, 255, 255, 0.05)",
-          backdropFilter: "blur(14px)",
-          borderRadius: "20px",
-          padding: "2.5rem",
-          boxShadow: "0 8px 32px rgba(16, 228, 165, 0.15)",
-          maxWidth: "600px",
-          textAlign: "center",
-          color: "#E0FFF4",
-        }}
+      <div className="pig"
       >
         <h1
           style={{
@@ -152,19 +133,7 @@ export default function HomePage() {
 
 function Button() {
   return (
-    <button
-      style={{
-        background: "linear-gradient(135deg, #10E4A5 0%, #34d399 100%)",
-        color: "#0F172A",
-        padding: "0.85rem 1.5rem",
-        borderRadius: "50px",
-        fontWeight: "600",
-        border: "none",
-        fontSize: "1rem",
-        boxShadow: "0 8px 16px rgba(16, 228, 165, 0.35)",
-        cursor: "pointer",
-        transition: "transform 0.2s ease, box-shadow 0.2s ease",
-      }}
+    <button className="buton"
       onMouseOver={e => {
         e.currentTarget.style.transform = "scale(1.05)";
         e.currentTarget.style.boxShadow = "0 12px 24px rgba(16, 228, 165, 0.45)";
@@ -182,18 +151,12 @@ function Button() {
 
 function IconBlock({ icon, label }) {
   return (
-    <div style={{ textAlign: "center" }}>
-      <div
-        style={{
-          backgroundColor: "#1E293B",
-          padding: "1rem",
-          borderRadius: "1rem",
-          boxShadow: "0 4px 10px rgba(16, 228, 165, 0.1)",
-        }}
+    <div className="block">
+      <div className="icon"
       >
         {icon}
       </div>
-      <p style={{ marginTop: "0.5rem", fontSize: "0.9rem" }}>{label}</p>
+      <p className="label">{label}</p>
     </div>
   );
 }

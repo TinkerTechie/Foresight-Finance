@@ -1,0 +1,46 @@
+.main{
+        min-height: 100vh;
+        background-color: #0F172A;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        position: relative;
+        font-family: Inter sans-serif;
+}
+.pig{
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(16, 228, 165, 0.15);
+    max-width: 600px;
+    text-align: center;
+    color: #E0FFF4;
+}
+.buton{
+    background: linear-gradient(135deg, #10E4A5 0%, #34d399 100%);
+        color: #0F172A;
+        padding: 0.85rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        border: none;
+        font-size: 1rem;
+        box-shadow: 0 8px 16px rgba(16, 228, 165, 0.35);
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.icon{
+    background-color: #1E293B;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(16, 228, 165, 0.1);
+}
+.label{
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+.block{
+    text-align: center;
+}
