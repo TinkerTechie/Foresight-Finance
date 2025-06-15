@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "./userinfo.css";
+import Link from "next/link";
 
 export function FloatingEmojis() {
   const emojis = ["💼", "💰", "📊", "👤", "📝", "🏦", "📈", "💳", "🧾", "🪙", "🧮", "📉"];
@@ -98,10 +99,11 @@ export default function UserInfoPage() {
         <InputField label="Salary" name="salary" type="number" value={form.salary} onChange={handleChange} />
         <InputField label="Primary Income Source" name="incomeSource" value={form.incomeSource} onChange={handleChange} />
         <InputField label="Other Income Sources" name="otherIncome" value={form.otherIncome} onChange={handleChange} />
-
+        <Link href="/income">
         <button onClick={() => console.log("User Data:", form)} className="button">
           Continue
         </button>
+        </Link>
       </div>
     </div>
   );

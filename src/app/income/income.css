@@ -1,0 +1,117 @@
+.dashboardContainer {
+    font-family: "Segoe UI", sans-serif;
+    padding: 2rem;
+    background: linear-gradient(to right, #f8f9fc, #eef2f7);
+    min-height: 100vh;
+    color: #0f172a;
+  }
+  
+  .header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #2dd4bf;
+  }
+  
+  .balanceCard {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+  }
+  
+  .balanceCard h1 {
+    font-size: 2.2rem;
+    margin: 0.3rem 0;
+  }
+  
+  .toggleBtns {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .toggleBtns button {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: none;
+    background-color: #f1f5f9;
+    color: #334155;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .toggleBtns .active {
+    background-color: #5eead4;
+    color: #0f172a;
+  }
+  
+  .graph {
+    height: 100px;
+    background: #e2e8f0;
+    border-radius: 12px;
+    margin: 1rem 0;
+  }
+  
+  .limit {
+    font-size: 0.85rem;
+    color: #64748b;
+  }
+  
+  .cardSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .creditCard {
+    background: linear-gradient(to right, #6366f1, #9333ea);
+    color: white;
+    border-radius: 16px;
+    padding: 1rem 1.5rem;
+    flex: 1;
+    margin-right: 1rem;
+    position: relative;
+  }
+  
+  .creditCard .chip {
+    width: 35px;
+    height: 25px;
+    background: gold;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+  }
+  
+  .operations span {
+    font-size: 1.5rem;
+    margin-right: 0.8rem;
+    background-color: #f1f5f9;
+    padding: 10px;
+    border-radius: 12px;
+  }
+  
+  .transactions h3 {
+    margin-bottom: 1rem;
+  }
+  
+  .transactions ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .transactions li {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .amount {
+    color: #ef4444;
+    font-weight: 600;
+  }
+  

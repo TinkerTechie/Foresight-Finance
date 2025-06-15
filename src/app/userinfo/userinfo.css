@@ -8,7 +8,9 @@
   padding: 2rem;
   overflow: hidden;
 }
-
+a{
+  text-decoration: None;
+}
 .card {
   position: relative;
   z-index: 1;
