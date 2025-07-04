@@ -1,8 +1,7 @@
-
 "use client";
 import RecurringForm from "../userinfo/recurringForm";
 import { useRecurringLogic } from "../userinfo/useRecurringLogic";
-
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import {
   LineChart,
@@ -230,9 +229,13 @@ export default function FinanceDashboard() {
           Export CSV
         </button>
       </div>
-
+      <div className="card">
+        <h3>✅ Done for now?</h3>
+        <p>See your financial summary with savings and insights.</p>
+        <Link href="/endf" className="btn">
+          Finish & View Summary
+        </Link>
+      </div>
     </div>
   );
 }
-
-
