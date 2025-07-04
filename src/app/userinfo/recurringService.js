@@ -1,4 +1,4 @@
-import { db } from "@/firebase"; // Adjust path as needed
+import { db } from "@/firebase";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 
 export const addRecurringTransaction = async (tx) => {
@@ -7,5 +7,5 @@ export const addRecurringTransaction = async (tx) => {
 
 export const fetchRecurringTransactions = async () => {
   const snapshot = await getDocs(collection(db, "recurringTransactions"));
-  return snapshot.docs.map(doc => doc.data());
+  return snapshot.docs.map((doc) => doc.data());
 };

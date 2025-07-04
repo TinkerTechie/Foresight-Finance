@@ -119,7 +119,7 @@ export default function UserInfoPage() {
         <InputField label="Other Income Sources" name="otherIncome" value={form.otherIncome} onChange={handleChange} />
       <Link href="./foresightfinance">
         <button className="button">
-          Continue to Dashboard
+          Continue to Finance Dashboard
         </button></Link>
       </div>
     </div>

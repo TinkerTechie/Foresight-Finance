@@ -1,95 +1,152 @@
+/* === GLOBAL === */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #f3f4f6;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #f3f4f6, #e0f2fe);
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #1f2937;
+}
+
+/* === DASHBOARD WRAPPER === */
+.dashboard {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.dashboard-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #111827;
+}
+
+/* === CARD BOXES === */
+.card {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 30px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+.card p {
+  margin: 8px 0;
+  font-size: 1rem;
+  color: #374151;
+}
+
+/* === BUTTONS === */
+.btn {
+  background-color: #4f46e5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4338ca;
+}
+
+/* === RANGE SLIDER === */
+input[type="range"] {
+  width: 100%;
+  margin-top: 12px;
+  accent-color: #4f46e5;
+}
+
+/* === SCROLLABLE TABLE === */
+.scroll-table {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.table thead {
+  background-color: #f1f5f9;
+}
+
+.table th,
+.table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+/* === EXPORT ICON BUTTON === */
+.btn svg {
+  margin-right: 8px;
+}
+
+/* === ERROR MESSAGE === */
+.error {
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* === CHART CONTAINER === */
+.recharts-wrapper {
+  font-family: "Inter", sans-serif;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 600px) {
   .dashboard {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    padding: 20px;
   }
-  
+
   .dashboard-title {
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 30px;
-    text-align: center;
+    font-size: 2rem;
   }
-  
+
   .card {
-    margin-bottom: 30px;
-    padding: 25px;
-    border-radius: 14px;
-    background-color: #fafafa;
-    border: 1px solid #e5e7eb;
+    padding: 18px;
   }
-  
-  .card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    color: #111827;
-  }
-  
-  .card p {
-    margin: 8px 0;
-    color: #374151;
-  }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
-    background-color: white;
-  }
-  
-  .table thead {
-    background-color: #f9fafb;
-  }
-  
+
   .table th,
   .table td {
-    padding: 12px 15px;
-    border: 1px solid #e5e7eb;
-    text-align: left;
-    color: #374151;
+    font-size: 0.85rem;
+    padding: 10px 12px;
   }
-  
-  .table tbody tr:hover {
-    background-color: #f1f5f9;
-  }
-  
-  .scroll-table {
-    overflow-x: auto;
-  }
-  
-  /* Slider */
-  input[type="range"] {
-    width: 100%;
-    margin-top: 10px;
-  }
-  
-  /* Button */
+
   .btn {
-    display: inline-flex;
-    align-items: center;
-    background-color: #4f46e5;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    font-size: 0.95rem;
-    font-weight: 500;
+    width: 100%;
+    justify-content: center;
   }
-  
-  .btn:hover {
-    background-color: #4338ca;
-  }
-  
+}
+
