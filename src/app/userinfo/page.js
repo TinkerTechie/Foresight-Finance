@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import "./userinfo.css";
+import Link from "next/link";
 
 export function FloatingEmojis() {
   const emojis = ["💼", "💰", "📊", "👤", "📝", "🏦", "📈", "💳", "🧾", "🪙", "🧮", "📉"];
@@ -116,10 +117,10 @@ export default function UserInfoPage() {
         <InputField label="Daily Spending Limit" name="limit" type="number" value={form.limit} onChange={handleChange} />
         <InputField label="Primary Income Source" name="incomeSource" value={form.incomeSource} onChange={handleChange} />
         <InputField label="Other Income Sources" name="otherIncome" value={form.otherIncome} onChange={handleChange} />
-
-        <button onClick={handleSubmit} className="button">
+      <Link href="./foresightfinance">
+        <button className="button">
           Continue to Dashboard
-        </button>
+        </button></Link>
       </div>
     </div>
   );
