@@ -1,4 +1,3 @@
-// app/api/plaid/route.js
 import { Configuration, PlaidApi, PlaidEnvironments } from 'plaid';
 
 const config = new Configuration({
@@ -13,22 +12,32 @@ const config = new Configuration({
 
 const client = new PlaidApi(config);
 
-// ✅ SUPPORT GET METHOD
 export async function GET() {
   try {
-    const tokenResponse = await client.linkTokenCreate({
-      user: { client_user_id: 'user-123' },
+    // 🧪 DEBUG: log env vars — remove this in production
+    console.log("PLAID_CLIENT_ID:", process.env.PLAID_CLIENT_ID);
+    console.log("PLAID_SECRET:", process.env.PLAID_SECRET);
+
+    const response = await client.linkTokenCreate({
+      user: {
+        client_user_id: 'user-unique-id-123',
+      },
       client_name: 'Foresight Finance',
       products: ['transactions'],
       country_codes: ['US'],
       language: 'en',
     });
 
-    return Response.json({ link_token: tokenResponse.data.link_token });
+    return new Response(JSON.stringify({ link_token: response.data.link_token }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
   } catch (error) {
-    console.error("Plaid link token error:", error.response?.data || error.message);
-    return Response.json({ error: error.message }, { status: 500 });
+    console.error("❌ Error creating link token:", error?.response?.data || error.message);
+    return new Response(
+      JSON.stringify({ error: error?.response?.data || error.message }),
+      { status: 500 }
+    );
   }
 }
-
 

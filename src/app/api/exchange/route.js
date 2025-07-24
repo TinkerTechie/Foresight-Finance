@@ -1,4 +1,4 @@
-// /src/app/api/exchange/route.js
+
 import { Configuration, PlaidApi, PlaidEnvironments } from 'plaid';
 
 const config = new Configuration({
@@ -19,12 +19,13 @@ export async function POST(req) {
     const { public_token } = body;
 
     if (!public_token) {
-      return new Response(JSON.stringify({ error: "Missing public_token" }), {
+      return new Response(JSON.stringify({ error: 'Missing public_token' }), {
         status: 400,
+        headers: { 'Content-Type': 'application/json' },
       });
     }
 
-    // Exchange public_token for access_token
+    // Exchange public token for access token
     const tokenResponse = await client.itemPublicTokenExchange({ public_token });
     const access_token = tokenResponse.data.access_token;
 
@@ -35,17 +36,15 @@ export async function POST(req) {
       end_date: '2024-07-01',
       options: {
         count: 50,
+        offset: 0,
       },
     });
 
-    const raw = transactionsResponse.data.transactions;
-
-    // Format to match frontend structure
-    const transactions = raw.map((t) => ({
+    const transactions = transactionsResponse.data.transactions.map((t) => ({
       name: t.name,
       date: t.date,
-      amount: Math.abs(t.amount), // Remove negative sign
-      transaction_type: t.amount < 0 ? "debit" : "credit",
+      amount: Math.abs(t.amount),
+      transaction_type: t.amount < 0 ? 'debit' : 'credit',
     }));
 
     return new Response(JSON.stringify({ transactions }), {
@@ -54,14 +53,13 @@ export async function POST(req) {
     });
 
   } catch (err) {
-    console.error("❌ Error in /api/exchange:", err?.response?.data || err.message);
+    console.error('❌ Error in /api/exchange:', err?.response?.data || err.message);
     return new Response(
       JSON.stringify({ error: err?.response?.data || err.message }),
-      { status: 500 }
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      }
     );
   }
 }
-
-
-
-

@@ -1,5 +1,5 @@
 "use client";
-import RecurringForm from "../userinfo/recurringForm";
+import RecurringForm from "../userinfo/recurringform";
 import { useRecurringLogic } from "../userinfo/useRecurringLogic";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -50,9 +50,13 @@ export default function FinanceDashboard() {
         if (!res.ok) throw new Error("Plaid link token fetch failed");
         return res.json();
       })
-      .then((data) => setLinkToken(data.link_token))
+      .then((data) => {
+        console.log("🔑 Plaid link_token:", data.link_token); 
+        setLinkToken(data.link_token);
+      })
       .catch((err) => console.error("Plaid token error:", err));
   }, []);
+  
 
   // Fetch USD to INR exchange rate
   useEffect(() => {

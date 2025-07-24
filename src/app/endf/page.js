@@ -12,10 +12,7 @@ export default function EndPage() {
   });
 
   useEffect(() => {
-    // Get screen size for confetti
     setDimensions({ width: window.innerWidth, height: window.innerHeight });
-
-    // Simulate stored transactions summary (replace with actual logic or context/state)
     const storedTransactions = JSON.parse(localStorage.getItem("transactions") || "[]");
 
     const income = storedTransactions

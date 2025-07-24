@@ -1,4 +1,4 @@
-/* === GLOBAL === */
+
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +6,6 @@ body {
   color: #1f2937;
 }
 
-/* === DASHBOARD WRAPPER === */
 .dashboard {
   max-width: 1000px;
   margin: 40px auto;
