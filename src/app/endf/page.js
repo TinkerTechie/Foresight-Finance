@@ -1,4 +1,7 @@
 "use client";
+/* eslint-disable react/no-unescaped-entities */
+
+
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Confetti from "react-confetti";
@@ -32,7 +35,7 @@ export default function EndPage() {
     <div className="end-container">
       <Confetti width={dimensions.width} height={dimensions.height} />
 
-      <h1>🎉 You're All Set!</h1>
+      <h1>🎉 You are All Set!</h1>
       <p>Thank you for using <strong>Foresight Finance</strong>.</p>
 
       <div className="summary">
