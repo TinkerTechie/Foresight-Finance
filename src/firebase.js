@@ -1,4 +1,8 @@
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d5a8df4 (login page's issues resolved)
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
@@ -13,6 +17,7 @@ const firebaseConfig = {
   measurementId: "G-3YFDTZQXGL"
 };
 
+<<<<<<< HEAD
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 if (typeof window !== "undefined") {
@@ -21,6 +26,15 @@ if (typeof window !== "undefined") {
   } catch (e) {
     console.warn("Analytics initialization failed:", e);
   }
+=======
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+
+if (typeof window !== "undefined") {
+  getAnalytics(app);
+>>>>>>> d5a8df4 (login page's issues resolved)
 }
 
 export { db };
