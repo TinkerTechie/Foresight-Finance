@@ -11,7 +11,11 @@
   "dependencies": {
     "@chakra-ui/react": "^3.17.0",
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.2",
+    "@mui/material": "^7.3.2",
+    "@mui/styled-engine-sc": "^7.3.2",
+    "@mui/system": "^7.3.2",
     "dotenv": "^17.2.0",
     "firebase": "^11.10.0",
     "framer-motion": "^12.9.4",
@@ -23,7 +27,8 @@
     "react-dom": "^19.0.0",
     "react-plaid-link": "^4.0.1",
     "react-router-dom": "^6.30.0",
-    "recharts": "^2.15.3"
+    "recharts": "^2.15.3",
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

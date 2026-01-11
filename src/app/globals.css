@@ -1,80 +1,83 @@
-/* Reset + base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #10e4a5;
+  --color-primary-glow: rgba(16, 228, 165, 0.4);
+  --color-secondary: #0f172a;
+  --color-card-bg: rgba(30, 41, 59, 0.5);
+  --color-card-border: rgba(16, 228, 165, 0.1);
+
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .glass-card {
+    @apply bg-slate-900/40 backdrop-blur-xl border border-white/5 shadow-2xl;
   }
-  
-  html {
-    font-size: 16px;
-    scroll-behavior: smooth;
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#10e4a5] to-[#3b82f6];
   }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9fafb;
-    color: #111827;
-    line-height: 1.6;
+
+  .font-display {
+    font-family: var(--font-display);
   }
-  
-  /* Layout helpers */
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
+}
+
+:root {
+  --background: #020617;
+  --foreground: #f8fafc;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Grain Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
   }
-  
-  /* Responsive Typography */
-  h1 {
-    font-size: 2.25rem; /* 36px */
+
+  50% {
+    transform: translateY(-20px);
   }
-  h2 {
-    font-size: 1.875rem; /* 30px */
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 228, 165, 0.4);
   }
-  h3 {
-    font-size: 1.5rem; /* 24px */
+
+  70% {
+    box-shadow: 0 0 0 15px rgba(16, 228, 165, 0);
   }
-  p {
-    font-size: 1rem; /* 16px */
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 228, 165, 0);
   }
-  
-  /* Responsive Grid Example */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-  }
-  
-  /* Button styles */
-  button {
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.375rem;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.2s;
-  }
-  
-  button:hover {
-    background-color: #1d4ed8;
-  }
-  
-  /* Utility classes */
-  .mt-2 { margin-top: 0.5rem; }
-  .mt-4 { margin-top: 1rem; }
-  .mb-4 { margin-bottom: 1rem; }
-  .text-center { text-align: center; }
-  .hidden { display: none; }
-  
-  /* Media Queries */
-  @media (max-width: 768px) {
-    h1 { font-size: 1.75rem; }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.25rem; }
-    .container { padding: 0.5rem; }
-    button { font-size: 0.9rem; padding: 0.6rem 1.2rem; }
-  }
-  
+}

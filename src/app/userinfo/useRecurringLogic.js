@@ -1,3 +1,4 @@
+"use client"
 import { useEffect } from "react";
 import { fetchRecurringTransactions } from "./recurringService";
 
@@ -29,5 +30,5 @@ export const useRecurringLogic = (addTransaction) => {
         }
       });
     });
-  }, []);
+  }, [addTransaction]);
 };
